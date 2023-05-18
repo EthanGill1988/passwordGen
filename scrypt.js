@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 // created function
 function generatePassword() {
 
-  
+  //added prompts for the User Selection
 let text;
 let input0 = prompt("Select between 8 and 128", "Enter Here");
 if (input0 < 8) {
@@ -18,6 +18,7 @@ if (isNaN(input0)) {
     alert("Must be a Number!");
     return "Please Try Again";
 }
+// defined the charset
 let charset = ""
 let input1 = confirm("Do you wish to include lowercase letters?");
 if (input1 === true) {
@@ -38,14 +39,13 @@ if (input3 === true) {
  }
 
 console.log(charset);
-
-// var length = 8,
-//         charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-//         retVal = "";
-//     for (var i = 0, n = charset.length; i < length; ++i) {
-//         retVal += charset.charAt(Math.floor(Math.random() * n));
-//     }
-//     return retVal;
+// designated the var length to be as specified by user.
+var length = input0,
+        retVal = "";
+    for (var i = 0, n = charset.length; i < length; ++i) {
+        retVal += charset.charAt(Math.floor(Math.random() * n));
+     }
+    return retVal;
   
   return "Generated Password"
 }
